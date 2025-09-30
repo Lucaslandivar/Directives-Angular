@@ -5,18 +5,18 @@ import {
   ElementRef,
   HostListener,
   HostBinding,
-  Input
+  Input,
 } from '@angular/core';
 
 @Directive({
-  selector: '[appBetterHighlight]'
+  selector: '[appBetterHighlight]',
 })
 export class BetterHighlightDirective implements OnInit {
   @Input() defaultColor: string = 'transparent';
   @Input('appBetterHighlight') highlightColor: string = 'blue';
   @HostBinding('style.backgroundColor') backgroundColor: string;
 
-  constructor(private elRef: ElementRef, private renderer: Renderer2) { }
+  constructor(private elRef: ElementRef, private renderer: Renderer2) {}
 
   ngOnInit() {
     this.backgroundColor = this.defaultColor;
@@ -32,5 +32,5 @@ export class BetterHighlightDirective implements OnInit {
     // this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'transparent');
     this.backgroundColor = this.defaultColor;
   }
-
 }
+// Teste
